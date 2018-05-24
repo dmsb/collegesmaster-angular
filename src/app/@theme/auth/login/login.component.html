@@ -1,0 +1,52 @@
+<nb-auth-block>
+      <h2 class="title">Sign In</h2>
+      <small class="form-text sub-title">Hello! Sign in with your Username</small>
+      <form (ngSubmit)="authenticate()" #form="ngForm" autocomplete="nope">
+        <div class="form-group">
+          <label for="input-username" class="sr-only">Username</label>
+          <input name="username" [(ngModel)]="user.username" id="input-username"
+                 class="form-control" placeholder="Username" #username="ngModel"
+                 [class.form-control-danger]="username.invalid && username.touched" autofocus
+                 [required]="true">
+          <small class="form-text error" *ngIf="username.invalid && 
+            username.touched && username.errors?.required">
+            Username is required!
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="input-password" class="sr-only">Password</label>
+          <input name="password" [(ngModel)]="user.password" type="password" id="input-password"
+                 class="form-control" placeholder="Password" #password="ngModel"
+                 [class.form-control-danger]="password.invalid && password.touched"
+                 [required]="true"
+                 [minlength]="6"
+                 [maxlength]="50">
+          <small class="form-text error" *ngIf="password.invalid && password.touched
+            && password.errors?.required">
+            Password is required!
+          </small>
+          <small
+            class="form-text error"
+            *ngIf="password.invalid && password.touched && 
+            (password.errors?.minlength || password.errors?.maxlength)">
+            Password should contains
+            from 6
+            to 50
+            characters
+          </small>
+        </div>
+        <div class="form-group accept-group col-sm-12">
+          <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe">Remember me</nb-checkbox>
+          <a class="forgot-password" routerLink="../request-password">Forgot Password?</a>
+        </div>
+        <button [disabled]="submitted || !form.valid" class="btn btn-block btn-hero-success"
+                [class.btn-pulse]="submited">
+          Sign In
+        </button>
+      </form>
+      <div class="links">
+        <small class="form-text">
+          Don't have an account? <a routerLink="../auth/register"><strong>Sign Up</strong></a>
+        </small>
+      </div>
+    </nb-auth-block>
