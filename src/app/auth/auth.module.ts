@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbEmailPassAuthProvider } from '@nebular/auth';
-import { LoginComponent } from './login.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { NbCheckboxModule } from '@nebular/theme';
+import { NbEmailPassAuthProvider, NbAuthModule } from '@nebular/auth';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
 
 const formSetting: any = {
   redirectDelay: 500,
@@ -13,6 +17,9 @@ const formSetting: any = {
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    RouterModule,
+    NbCheckboxModule,
     NbAuthModule.forRoot({
       providers: {
         email: {
@@ -68,6 +75,6 @@ const formSetting: any = {
       },
     })
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, RegisterComponent]
 })
-export class LoginModule { }
+export class AuthModule { }

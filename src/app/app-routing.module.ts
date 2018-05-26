@@ -1,25 +1,14 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import {
-  NbAuthComponent,
-  NbLogoutComponent,
-  NbRegisterComponent,
-  NbRequestPasswordComponent,
-  NbResetPasswordComponent,
-} from '@nebular/auth';
-import { LoginComponent } from './@theme/auth/login/login.component';
-import { RegisterComponent } from './@theme/auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   {
     path: 'auth',
-    component: NbAuthComponent,
     children: [
-      {
-        path: '',
-        component: LoginComponent,
-      },
       {
         path: 'login',
         component: LoginComponent,
@@ -27,22 +16,9 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent,
-      },
-      {
-        path: 'logout',
-        component: NbLogoutComponent,
-      },
-      {
-        path: 'request-password',
-        component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },
-    ],
-  },
-  { path: '', redirectTo: 'auth', pathMatch: 'full' }
+      }
+    ]
+  }
 ];
 
 const config: ExtraOptions = {
@@ -50,7 +26,7 @@ const config: ExtraOptions = {
 };
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, config)],
+  imports: [RouterModule.forRoot(appRoutes, config)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {

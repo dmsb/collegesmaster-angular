@@ -40,13 +40,13 @@
           <a class="forgot-password" routerLink="../request-password">Forgot Password?</a>
         </div>
         <button [disabled]="submitted || !form.valid" class="btn btn-block btn-hero-success"
-                [class.btn-pulse]="submited">
+                [class.btn-pulse]="submitted">
           Sign In
         </button>
       </form>
       <div class="links">
         <small class="form-text">
-          Don't have an account? <a routerLink="../auth/register"><strong>Sign Up</strong></a>
+          Don't have an account? <a routerLink="../register"><strong>Sign Up</strong></a>
         </small>
       </div>
     </nb-auth-block>

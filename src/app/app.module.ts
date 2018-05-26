@@ -14,16 +14,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NbAuthJWTToken, NB_AUTH_TOKEN_CLASS } from '@nebular/auth';
-import { LoginComponent } from './@theme/auth/login/login.component';
-import { RegisterComponent } from './@theme/auth/register/register.component';
+import { ChallengesModule } from './challenges/challenges.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AuthModule,
+    ChallengesModule,
     AppRoutingModule,
 
     NgbModule.forRoot(),
@@ -32,8 +33,7 @@ import { RegisterComponent } from './@theme/auth/register/register.component';
   ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
-    { provide: NB_AUTH_TOKEN_CLASS, useValue: NbAuthJWTToken }
+    { provide: APP_BASE_HREF, useValue: '/' }
   ],
 })
 export class AppModule {
