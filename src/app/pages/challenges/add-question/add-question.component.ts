@@ -3,7 +3,7 @@ import { ViewCell, DefaultEditor } from 'ng2-smart-table';
 
 @Component({
   selector: 'add-question',
-  template: `<button class="btn btn-block btn-hero-success" (click)="onClick()">Add Question</button>`
+  template: `<button class="btn btn-block btn-hero-success" (click)="onClickEvent()">Add Question</button>`
 })
 export class AddQuestionComponent extends DefaultEditor implements AfterViewInit {
 
