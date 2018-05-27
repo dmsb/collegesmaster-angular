@@ -5,7 +5,7 @@ import { CreateChallengeComponent } from './create-challenge/create-challenge.co
 import { EditChallengeComponent } from './edit-challenge/edit-challenge.component';
 
 const challengesRoutes: Routes = [
-  { path: 'challenges', component: ChallengesComponent, 
+  { path: '', component: ChallengesComponent, 
     children: [
         { path: 'create-challenge', component: CreateChallengeComponent },
         { path: 'edit-challenge', component: EditChallengeComponent }

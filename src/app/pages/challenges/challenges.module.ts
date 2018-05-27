@@ -4,6 +4,7 @@ import { ChallengesComponent } from './challenges.component';
 import { CreateChallengeComponent } from './create-challenge/create-challenge.component';
 import { EditChallengeComponent } from './edit-challenge/edit-challenge.component';
 import { ChallengesRoutingModule } from './challenges-routing.module';
+import { PagesModule } from '../pages.module';
 
 @NgModule({
   imports: [

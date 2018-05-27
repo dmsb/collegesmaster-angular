@@ -5,18 +5,12 @@ import { RegisterComponent } from './auth/register/register.component';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'auth', pathMatch: 'full' },
-  {
-    path: 'auth',
+  { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: 'auth',
     children: [
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
-      }
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent }
     ]
   }
 ];
