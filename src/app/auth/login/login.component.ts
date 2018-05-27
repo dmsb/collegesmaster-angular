@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { NbAuthService, NB_AUTH_OPTIONS, NbAuthSocialLink, NbAuthResult } from '@nebular/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,16 +11,18 @@ export class LoginComponent implements OnInit {
   user: any = {};
   submitted: boolean = false;
 
+  currentRouter: Router;
+
   ngOnInit() {
     
   }
 
-  constructor(protected service: NbAuthService,
-              @Inject(NB_AUTH_OPTIONS) protected options = {},
-              protected router: Router) {
+  constructor(private router: Router) {
+    this.currentRouter = router;
   }
 
   authenticate(): void {
     this.submitted = true;
+    this.currentRouter.navigateByUrl('/pages');
   }
 }

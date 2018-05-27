@@ -4,12 +4,15 @@ import { ChallengesComponent } from './challenges.component';
 import { CreateChallengeComponent } from './create-challenge/create-challenge.component';
 import { EditChallengeComponent } from './edit-challenge/edit-challenge.component';
 import { ChallengesRoutingModule } from './challenges-routing.module';
-import { PagesModule } from '../pages.module';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NbCardModule } from '@nebular/theme';
 
 @NgModule({
   imports: [
     CommonModule,
-    ChallengesRoutingModule
+    ChallengesRoutingModule,
+    NbCardModule,
+    Ng2SmartTableModule
   ],
   declarations: [ChallengesComponent, CreateChallengeComponent, EditChallengeComponent]
 })

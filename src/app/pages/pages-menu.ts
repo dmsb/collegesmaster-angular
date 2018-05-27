@@ -8,7 +8,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'FEATURES',
+    title: 'MENU',
     group: true,
   },
   {
@@ -21,9 +21,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/challenges/create-challenge',
       },
       {
-        title: 'Edit',
+        title: 'Show All',
         link: '/pages/challenges/edit-challenge',
       }
     ],
+  },
+  {
+    title: 'Sing out',
+    icon: 'nb-keypad',
+    link: '/auth'
   }
 ];
