@@ -1,0 +1,9 @@
+:host /deep/ ng2-smart-table thead > tr > td > ng2-smart-table-cell > table-cell-edit-mode >
+div  > table-cell-default-editor > div > select-editor > select { 
+    height: calc(2rem + 2px) !important;
+}
+
+:host /deep/ ng2-smart-table thead > tr > th > ng2-smart-table-filter > div
+select-filter > select { 
+    height: calc(2rem + 2px) !important;
+}
