@@ -6,6 +6,7 @@ import { EditChallengeComponent } from './edit-challenge/edit-challenge.componen
 import { ChallengesRoutingModule } from './challenges-routing.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NbCardModule } from '@nebular/theme';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { NbCardModule } from '@nebular/theme';
     NbCardModule,
     Ng2SmartTableModule
   ],
-  declarations: [ChallengesComponent, CreateChallengeComponent, EditChallengeComponent]
+  declarations: [ChallengesComponent, CreateChallengeComponent, EditChallengeComponent, AddQuestionComponent]
 })
 export class ChallengesModule { }

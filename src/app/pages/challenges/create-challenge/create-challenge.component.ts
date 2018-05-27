@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddQuestionComponent } from '../add-question/add-question.component';
 
 @Component({
   selector: 'create-challenge',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateChallengeComponent implements OnInit {
 
-  subm
+  disciplineList = [
+    { value: '1', title: 'Corporative Development' },
+    { value: '2', title: 'Requeriments Engineering' },
+    { value: '3', title: 'Mobile Development' }
+  ];
+
   data = [
     {
       title: 'Challenge 1',
@@ -46,33 +52,60 @@ export class CreateChallengeComponent implements OnInit {
       discipline: {
         title: 'Discipline',
         editor: {
-          type: 'list'
+          type: 'list',
+          config: {
+            list: this.disciplineList
+          },
         },
         filter: {
           type: 'list',
           config: {
             selectText: 'Select...',
-            list: [
-              { value: 'Glenna Reichert', title: 'Glenna Reichert' },
-              { value: 'Kurtis Weissnat', title: 'Kurtis Weissnat' },
-              { value: 'Chelsey Dietrich', title: 'Chelsey Dietrich' },
-            ],
+            list: this.disciplineList
           },
         },
       },
       submitted: {
         title: 'Submitted',
         editor: {
-          type: 'list'
-        }
+          type: 'list',
+          config: {
+            list: [
+              { value: true, title: 'Yes' },
+              { value: false, title: 'No' }
+            ]
+          },
+        },
+        filter: {
+          type: 'list',
+          config: {
+            selectText: 'Select...',
+            list: [
+              { value: true, title: 'Yes' },
+              { value: false, title: 'No' }
+            ]
+          },
+        },
       },
       totalPontuation: {
         title: 'Total pontuation',
         addable: false,
         editable: false
+      },
+      addQuestion: {
+        title: 'Add Question',
+        type: 'custom',
+        renderComponent: AddQuestionComponent,
+        addable : false,
+        editable : false,
+        filter: false,
+        editor: {
+          type: 'custom',
+          component: AddQuestionComponent
+        }
       }
-    },
-  };
+    }
+  }
 
   constructor() { }
 
