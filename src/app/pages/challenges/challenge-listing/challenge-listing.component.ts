@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AddQuestionComponent } from '../add-question/add-question.component';
+import { ReplyChallengeButtonComponent } from '../reply-challenge-button/reply-challenge-button.component';
 
 @Component({
-  selector: 'create-challenge',
-  templateUrl: './create-challenge.component.html',
-  styleUrls: ['./create-challenge.component.scss']
+  selector: 'challenge-listing',
+  templateUrl: './challenge-listing.component.html',
+  styleUrls: ['./challenge-listing.component.scss']
 })
-export class CreateChallengeComponent implements OnInit {
+export class ChallengeListingComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() { }
 
   disciplineList = [
     { value: '1', title: 'Corporative Development' },
@@ -30,20 +34,10 @@ export class CreateChallengeComponent implements OnInit {
   ]
 
   settings = {
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-      confirmCreate: true
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
+    actions: {
+      add: false,
+      edit: false,
+      delete: false
     },
     columns: {
       title: {
@@ -92,40 +86,18 @@ export class CreateChallengeComponent implements OnInit {
         addable: false,
         editable: false
       },
-      addQuestion: {
-        title: 'Add Question',
+      addQuestionButton: {
+        title: 'Reply',
         type: 'custom',
-        renderComponent: AddQuestionComponent,
+        renderComponent: ReplyChallengeButtonComponent,
         addable : false,
         editable : false,
         filter: false,
         editor: {
           type: 'custom',
-          component: AddQuestionComponent
+          component: ReplyChallengeButtonComponent
         }
       }
-    }
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  onConfirmCreateEvent(event):void  {
-    if (window.confirm('Are you sure you want to create?')) {
-      event.newData['name'] += ' + added in code';
-      event.confirm.resolve(event.newData);
-    } else {
-      event.confirm.reject();
-    }
-  }
-
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
     }
   }
 }

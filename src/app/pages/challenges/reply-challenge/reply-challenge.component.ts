@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'add-question',
-  templateUrl: './add-question.component.html',
-  styleUrls: ['./add-question.component.scss']
+  selector: 'reply-challenge',
+  templateUrl: './reply-challenge.component.html',
+  styleUrls: ['./reply-challenge.component.scss']
 })
-export class AddQuestionComponent {
+export class ReplyChallengeComponent {
 
   modalHeader: string;
   modalContent = `Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
@@ -18,4 +18,5 @@ export class AddQuestionComponent {
   closeModal() {
     this.activeModal.close();
   }
+
 }

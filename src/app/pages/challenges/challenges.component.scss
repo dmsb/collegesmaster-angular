@@ -1,0 +1,80 @@
+// --- Custom StyleSheet for ngs-smart-table ---
+
+//Custom style for list column
+:host /deep/
+ng2-smart-table thead > tr > th > ng2-smart-table-filter > div select-filter > select
+{
+    height: calc(2rem + 3px) !important;
+}
+
+:host /deep/ ng2-smart-table > table > tbody > tr > td > ng2-smart-table-cell > table-cell-edit-mode > 
+div > table-cell-default-editor > div > select-editor > select
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+:host /deep/
+ng2-smart-table thead > tr > td > ng2-smart-table-cell > table-cell-edit-mode > div >
+table-cell-default-editor > div > select-editor > select
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+//REPLY-CHALLENGE-BUTTON
+
+:host /deep/ ng2-smart-table > table > tbody > tr > td > ng2-smart-table-cell > table-cell-view-mode >
+div > custom-view-component > reply-challenge-button > button 
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+:host /deep/ ng2-smart-table thead > tr > td > ng2-smart-table-cell > table-cell-edit-mode > div >
+table-cell-custom-editor > reply-challenge-button > button
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    
+}
+
+:host /deep/ ng2-smart-table > table > tbody > tr > td > ng2-smart-table-cell > table-cell-edit-mode >
+div > table-cell-custom-editor > reply-challenge-button > button
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+
+// ADD-QUESTION-BUTTON
+
+:host /deep/ ng2-smart-table > table > tbody > tr > td > ng2-smart-table-cell > table-cell-view-mode >
+div > custom-view-component > add-question-button > button 
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+:host /deep/ ng2-smart-table thead > tr > td > ng2-smart-table-cell > table-cell-edit-mode > div >
+table-cell-custom-editor > add-question-button > button
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    
+}
+
+:host /deep/ ng2-smart-table > table > tbody > tr > td > ng2-smart-table-cell > table-cell-edit-mode >
+div > table-cell-custom-editor > add-question-button > button
+{
+    height: calc(2rem + 3px) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}

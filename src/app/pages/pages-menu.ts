@@ -14,17 +14,40 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Challenges',
     icon: 'nb-keypad',
-    link: '/pages/challenges',
     children: [
       {
-        title: 'Create',
-        link: '/pages/challenges/create-challenge',
+        //Alunos responder
+        title: 'Show All',
+        link: '/pages/challenges/challenge-listing',
       },
       {
-        title: 'Show All',
-        link: '/pages/challenges/edit-challenge',
+        //Criação de Desafios
+        title: 'My Challenges',
+        link: '/pages/challenges/my-challenges',
+      },
+      {
+        //Visualização de desafios respondidos
+        title: 'My Results',
+        link: '/pages/challenges/replied-challenges',
       }
     ],
+  },
+  {
+    title: 'Ranking',
+    icon: 'nb-keypad',
+    children: [ 
+      {
+         //Tela de ranking geral do curso
+         title: 'Course Ranking',
+         link: '/pages/ranking/course-ranking',
+      },
+      {
+        //Tela de ranking por disciplina
+        title: 'Discipline Ranking',
+        link: '/pages/ranking/discipline-ranking',
+     },
+
+    ]
   },
   {
     title: 'Sing out',

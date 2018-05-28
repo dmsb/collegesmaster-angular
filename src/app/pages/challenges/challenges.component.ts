@@ -1,8 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NbMenuItem, NbMenuService, NbThemeService, NbMediaBreakpointsService, NbSidebarService, NbMediaBreakpoint } from '@nebular/theme';
-import { Subscription } from 'rxjs';
-import { withLatestFrom, delay } from 'rxjs/operators';
-import { StateService } from '../../@core/data/state.service';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'challenges',
@@ -11,10 +8,8 @@ import { StateService } from '../../@core/data/state.service';
 })
 export class ChallengesComponent implements OnInit {
 
-  constructor() { 
-  }
+  constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
