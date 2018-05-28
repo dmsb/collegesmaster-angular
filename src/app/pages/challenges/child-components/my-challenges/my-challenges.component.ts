@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AddQuestionButtonComponent } from '../add-question-button/add-question-button.component';
+import { AddQuestionButtonComponent } from './add-question-button/add-question-button.component';
 
 @Component({
   selector: 'my-challenges',
-  templateUrl: './my-challenges.component.html',
-  styleUrls: ['./my-challenges.component.scss']
+  templateUrl: './my-challenges.component.html'
 })
 export class MyChallengesComponent implements OnInit {
 
@@ -14,24 +13,15 @@ export class MyChallengesComponent implements OnInit {
   }
 
   disciplineList = [
-    { value: '1', title: 'Corporative Development' },
-    { value: '2', title: 'Requeriments Engineering' },
-    { value: '3', title: 'Mobile Development' }
+    { value: 'Corporative Development', title: 'Corporative Development' },
+    { value: 'Requeriments Engineering', title: 'Requeriments Engineering' },
+    { value: 'Mobile Development', title: 'Mobile Development' }
   ];
 
-  data = [
-    {
-      title: 'Challenge 1',
-      discipline: 'Corporative Development',
-      submitted: 'False',
-      totalPontuation: 10,
-    },
-    {
-      title: 'Challenge 2',
-      discipline: 'Soft. Engeen',
-      submitted: 'True',
-      totalPontuation: 20,
-    }
+  types = [
+    { value: 'Kill Faster', title: 'Kill Faster' },
+    { value: 'Deadline', title: 'Deadline' },
+    { value: 'Activity', title: 'Activity' }
   ]
 
   settings = {
@@ -76,19 +66,35 @@ export class MyChallengesComponent implements OnInit {
           type: 'list',
           config: {
             list: [
-              { value: true, title: 'Yes' },
-              { value: false, title: 'No' }
+              { value: 'Yes', title: 'Yes' },
+              { value: 'No', title: 'No' }
             ]
           },
         },
         filter: {
           type: 'list',
           config: {
-            selectText: 'Select...',
+            selectText: '---Select---',
             list: [
-              { value: true, title: 'Yes' },
-              { value: false, title: 'No' }
+              { value: 'Yes', title: 'Yes' },
+              { value: 'No', title: 'No' }
             ]
+          },
+        },
+      },
+      type: {
+        title: 'Type',
+        editor: {
+          type: 'list',
+          config: {
+            list: this.types
+          },
+        },
+        filter: {
+          type: 'list',
+          config: {
+            selectText: '---Select---',
+            list: this.types
           },
         },
       },

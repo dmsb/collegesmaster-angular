@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+  <div class="modal-body">
+    <form (ngSubmit)="addQuestion()" #form="ngForm" autocomplete="nope">
+      <div class="form-group">
+        <label for="input-description" class="sr-only">Description</label>
+        <input name="description" [(ngModel)]="question.description" id="input-description"
+              class="form-control" placeholder="Description" #username="ngModel"
+              [class.form-control-danger]="question.description.invalid && question.description.touched" autofocus
+              [required]="true">
+        <small class="form-text error" *ngIf="question.description.invalid && 
+        question.description.touched && question.description.errors?.required">
+          Description is required!
+        </small>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-md btn-success" (click)="closeModal()">Add</button>
+  </div>

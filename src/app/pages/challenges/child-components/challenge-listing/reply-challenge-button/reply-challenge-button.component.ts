@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { DefaultEditor } from 'ng2-smart-table';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ReplyChallengeComponent } from '../reply-challenge/reply-challenge.component';
+import { ReplyChallengeComponent } from '../../reply-challenge/reply-challenge.component';
 
 @Component({
   selector: 'reply-challenge-button',

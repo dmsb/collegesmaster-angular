@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'challenges',
-  templateUrl: './challenges.component.html',
+  template: '<router-outlet></router-outlet>',
   styleUrls: ['./challenges.component.scss']
 })
 export class ChallengesComponent implements OnInit {

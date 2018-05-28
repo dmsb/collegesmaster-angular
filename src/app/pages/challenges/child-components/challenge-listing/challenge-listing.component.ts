@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ReplyChallengeButtonComponent } from '../reply-challenge-button/reply-challenge-button.component';
+import { ReplyChallengeButtonComponent } from './reply-challenge-button/reply-challenge-button.component';
 
 @Component({
   selector: 'challenge-listing',
-  templateUrl: './challenge-listing.component.html',
-  styleUrls: ['./challenge-listing.component.scss']
+  templateUrl: './challenge-listing.component.html'
 })
 export class ChallengeListingComponent implements OnInit {
 
@@ -13,22 +12,30 @@ export class ChallengeListingComponent implements OnInit {
   ngOnInit() { }
 
   disciplineList = [
-    { value: '1', title: 'Corporative Development' },
-    { value: '2', title: 'Requeriments Engineering' },
-    { value: '3', title: 'Mobile Development' }
+    { id: '1', name: 'Corporative Development' },
+    { id: '2', name: 'Requeriments Engineering' },
+    { id: '3', name: 'Mobile Development' }
   ];
 
-  data = [
+  types = [
+    { value: 'Kill Faster', title: 'Kill Faster' },
+    { value: 'Deadline', title: 'Deadline' },
+    { value: 'Activity', title: 'Activity' }
+  ]
+
+  source = [
     {
       title: 'Challenge 1',
       discipline: 'Corporative Development',
-      submitted: 'False',
+      submitted: 'No',
+      type: 'Kill Faster',
       totalPontuation: 10,
     },
     {
       title: 'Challenge 2',
       discipline: 'Soft. Engeen',
-      submitted: 'True',
+      submitted: 'No',
+      type: 'Deadline',
       totalPontuation: 20,
     }
   ]
@@ -45,19 +52,6 @@ export class ChallengeListingComponent implements OnInit {
       },
       discipline: {
         title: 'Discipline',
-        editor: {
-          type: 'list',
-          config: {
-            list: this.disciplineList
-          },
-        },
-        filter: {
-          type: 'list',
-          config: {
-            selectText: 'Select...',
-            list: this.disciplineList
-          },
-        },
       },
       submitted: {
         title: 'Submitted',
@@ -65,19 +59,35 @@ export class ChallengeListingComponent implements OnInit {
           type: 'list',
           config: {
             list: [
-              { value: true, title: 'Yes' },
-              { value: false, title: 'No' }
+              { value: 'Yes', title: 'Yes' },
+              { value: 'No', title: 'No' }
             ]
           },
         },
         filter: {
           type: 'list',
           config: {
-            selectText: 'Select...',
+            selectText: '---Select---',
             list: [
-              { value: true, title: 'Yes' },
-              { value: false, title: 'No' }
+              { value: 'Yes', title: 'Yes' },
+              { value: 'No', title: 'No' }
             ]
+          },
+        },
+      },
+      type: {
+        title: 'Type',
+        editor: {
+          type: 'list',
+          config: {
+            list: this.types
+          },
+        },
+        filter: {
+          type: 'list',
+          config: {
+            selectText: '---Select---',
+            list: this.types
           },
         },
       },

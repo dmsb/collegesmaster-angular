@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { DefaultEditor } from 'ng2-smart-table';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AddQuestionComponent } from '../add-question/add-question.component';
+import { AddQuestionComponent } from '../../add-question/add-question.component';
 
 @Component({
   selector: 'add-question-button',
