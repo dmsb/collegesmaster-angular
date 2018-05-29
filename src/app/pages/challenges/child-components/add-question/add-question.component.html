@@ -16,20 +16,26 @@
                   id="input-question-wording" class="form-control" placeholder="Question Wording" 
                   [class.form-control-danger]="questionWording.invalid &&  questionWording.touched"
                   autofocus [required]="true">
-                  <small class="form-text error" *ngIf="questionWording.invalid && 
-                    questionWording.touched && questionWording.errors?.required">
-                    Question Wording is required!
-                  </small>
                 </div>
                 <div class="col-sm-6 input-group">
                   <input name="pontuation" [(ngModel)]="question.pontuation" #pontuation="ngModel"
                     id="input-pontuation" class="form-control" placeholder="Pontuation" 
                     [class.form-control-danger]="pontuation.invalid && pontuation.touched"
                     autofocus [required]="true">
-                    <small class="form-text error" *ngIf="pontuation.invalid && 
-                      pontuation.touched && pontuation.errors?.required">
-                      Pontuation is required!
-                    </small>
+                </div>
+              </div>
+              <div class="row full-name-inputs">
+                <div class="col-sm-6 input-group">
+                  <small class="form-text error" *ngIf="questionWording.invalid && 
+                    questionWording.touched && questionWording.errors?.required">
+                    Question Wording is required!
+                  </small>
+                </div>
+                <div class="col-sm-6 input-group">
+                  <small class="form-text error" *ngIf="pontuation.invalid && 
+                    pontuation.touched && pontuation.errors?.required">
+                    Pontuation is required!
+                  </small>
                 </div>
               </div>
             </nb-card-body>
