@@ -1,4 +1,4 @@
-class ModelImpl implements Model {
+export class ModelImpl implements Model {
     id: number;
     version: number;
     creationDateTime: Date;

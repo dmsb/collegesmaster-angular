@@ -1,4 +1,6 @@
-class ChallengeImpl extends ModelImpl implements Challenge {
+import { ModelImpl } from "../../../../domain-model/impl/model-impl";
+
+export class ChallengeImpl extends ModelImpl implements Challenge {
     title: string;
     discipline: Discipline;
     submmited: boolean;

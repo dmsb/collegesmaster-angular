@@ -1,4 +1,6 @@
-class UserImpl extends ModelImpl implements User {
+import { ModelImpl } from "../../impl/model-impl";
+
+export class UserImpl extends ModelImpl implements User {
     username: string;
     password: string;
     email: string;
