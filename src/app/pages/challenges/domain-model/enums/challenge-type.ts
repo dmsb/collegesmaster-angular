@@ -1,4 +1,4 @@
-enum ChallengeType {
+export enum ChallengeType {
     KillToKill,
     DeterminedTime,
     Activity

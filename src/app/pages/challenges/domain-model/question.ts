@@ -1,6 +1,7 @@
-interface Question extends Model {
+import { Challenge } from "./challenge";
+
+export interface Question extends Model {
     questionWording: string;
     challenge: Challenge;
-    type: QuestionType;
     pontuation: number;
 }
