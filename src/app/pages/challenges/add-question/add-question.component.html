@@ -1,0 +1,82 @@
+<div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <button class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+  <div class="form-row">
+      <div class="col-lg-12">
+        <nb-card>
+          <nb-card-header>Question</nb-card-header>
+          <nb-card-body>
+            <div class="form-row">
+              <div class="col-sm-12 form-group">
+                <label for="input-question-wording">Question Wording</label>
+                <textarea rows="3" name="questionWording" [(ngModel)]="question.questionWording" #questionWording="ngModel"
+                  id="input-question-wording" class="form-control" placeholder="Question Wording" 
+                  [class.form-control-danger]="questionWording.invalid && questionWording.touched"
+                  autofocus required></textarea>
+                  <small class="form-text error" *ngIf="questionWording.invalid && 
+                    questionWording.touched && questionWording.errors?.required">
+                    Question Wording is required!
+                  </small>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="col-sm-6">
+                <label for="input-pontuation">Pontuation</label>
+                <input name="pontuation" type="number" [(ngModel)]="question.pontuation" #pontuation="ngModel"
+                  id="input-pontuation" class="form-control" placeholder="Pontuation" 
+                  [class.form-control-danger]="pontuation.invalid && pontuation.touched"
+                  autofocus required>
+                  <small class="form-text error" *ngIf="pontuation.invalid && 
+                    pontuation.touched && pontuation.errors?.required">
+                    Pontuation is required!
+                  </small>
+              </div>
+              <div class="col-sm-6">
+                <label for="input-question-type">Question Type</label>
+                <div id="input-question-type"class="dropdown" ngbDropdown>
+                  <button class="btn btn-primary" type="button" ngbDropdownToggle>
+                    Dropdown
+                  </button>
+                  <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li class="dropdown-item" *ngFor="let questionType of questionTypes | genericEnum"
+                      [value]="questionType.key" (click)="updateAlternativesTemplate(questionType)" >
+                      {{questionType.value}}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="col-sm-12">
+                  <label for="input-right-answer">Right Answer</label>
+                  <input name="rightAnswer" type="number" [(ngModel)]="rightAnswer"
+                    id="input-right-answer" class="form-control" placeholder="Right Answer"
+                    autofocus required>
+                </div>
+            </div>
+            <div class="form-row" *ngFor="let alternative of alternatives">
+                <div class="col-sm-12">
+                    <label for="input-alternative-description">Alternative</label>
+                    <textarea rows="3" name="description" [(ngModel)]="alternative.description" #description="ngModel"
+                      id="input-alternative-description" class="form-control" placeholder="Description" 
+                      [class.form-control-danger]="description.invalid && description.touched"
+                      autofocus required></textarea>
+                      <small class="form-text error" *ngIf="description.invalid && 
+                        description.touched && description.errors?.required">
+                        Description is required!
+                      </small>
+                </div>
+            </div>
+          </nb-card-body>
+        </nb-card>
+      </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-md btn-success" (click)="closeModal()">Add</button>
+</div>
