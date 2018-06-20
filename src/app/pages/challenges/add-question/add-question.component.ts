@@ -26,20 +26,30 @@ export class AddQuestionComponent implements OnInit {
   question: QuestionImpl;
   
   rightAnswer: number;
-  alternatives: Array<Alternative>;
-
+  alternatives: Alternative[];
+  letters = Letter;
   questionTypes = QuestionType;
+  currentQuestionType: QuestionType;
 
   constructor(private activeModal: NgbActiveModal) { }
 
   ngOnInit() {
     this.question = new QuestionImpl;
     
-    this.alternatives = new Array;
+    this.alternatives = [];
+
+    this.alternatives[0] = new AlternativeImpl();
     this.alternatives[0].letter = Letter.A;
+
+    this.alternatives[1] = new AlternativeImpl();
     this.alternatives[1].letter = Letter.B;
+    
+    this.alternatives[2] = new AlternativeImpl();
     this.alternatives[2].letter = Letter.C;
+    
+    this.alternatives[3] = new AlternativeImpl();
     this.alternatives[3].letter = Letter.D;
+    this.currentQuestionType = QuestionType.MultipleChoice;
     
   }
   closeModal() {

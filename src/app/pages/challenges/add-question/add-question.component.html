@@ -40,7 +40,7 @@
                 <label for="input-question-type">Question Type</label>
                 <div id="input-question-type"class="dropdown" ngbDropdown>
                   <button class="btn btn-primary" type="button" ngbDropdownToggle>
-                    Dropdown
+                    {{currentQuestionType | genericEnum}}
                   </button>
                   <ul class="dropdown-menu" ngbDropdownMenu>
                     <li class="dropdown-item" *ngFor="let questionType of questionTypes | genericEnum"
@@ -59,10 +59,10 @@
                     autofocus required>
                 </div>
             </div>
-            <div class="form-row" *ngFor="let alternative of alternatives">
+            <div class="form-row" *ngFor="let letter of letters | genericEnum; index as i;">
                 <div class="col-sm-12">
-                    <label for="input-alternative-description">Alternative</label>
-                    <textarea rows="3" name="description" [(ngModel)]="alternative.description" #description="ngModel"
+                    <label for="input-alternative-description">Alternative {{letter.value}}</label>
+                    <textarea rows="3" name="description" [(ngModel)]="alternatives[i].description" #description="ngModel"
                       id="input-alternative-description" class="form-control" placeholder="Description" 
                       [class.form-control-danger]="description.invalid && description.touched"
                       autofocus required></textarea>
