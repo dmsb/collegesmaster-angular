@@ -9,9 +9,9 @@ import { Alternative } from '../domain-model/alternative';
 import { Letter } from '../domain-model/enums/letter';
 
 enum QuestionType {
-  MultipleChoice,
-  CheckBox,
-  CalculationAnswer
+  MultipleChoice = "Multiple Choice",
+  CheckBox = "Checkbox",
+  CalculationAnswer = "Calculation Answer"
 }
 
 @Component({
@@ -29,7 +29,7 @@ export class AddQuestionComponent implements OnInit {
   alternatives: Alternative[];
   letters = Letter;
   questionTypes = QuestionType;
-  currentQuestionType: QuestionType;
+  selectedQuestionType: string;
 
   constructor(private activeModal: NgbActiveModal) { }
 
@@ -49,19 +49,20 @@ export class AddQuestionComponent implements OnInit {
     
     this.alternatives[3] = new AlternativeImpl();
     this.alternatives[3].letter = Letter.D;
-    this.currentQuestionType = QuestionType.MultipleChoice;
+    this.selectedQuestionType = QuestionType.MultipleChoice;
     
   }
   closeModal() {
     this.activeModal.close();
   }
 
-  updateAlternativesTemplate(type: QuestionType) {
+  updateAlternativesTemplate(value: string) {
     const currentQuestion: QuestionImpl = this.question;
-    if(type = QuestionType.CalculationAnswer) {
+    if(value == QuestionType.CalculationAnswer) {
       this.question = new CalculedQuestionImpl(currentQuestion);
-    } else if(type = QuestionType.MultipleChoice) {
+    } else if(value == QuestionType.MultipleChoice) {
       this.question = new QuestionWithAlternativesImpl(currentQuestion);
     }
+    this.selectedQuestionType = value;
   }
 }

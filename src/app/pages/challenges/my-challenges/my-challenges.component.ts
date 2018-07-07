@@ -55,7 +55,7 @@ export class MyChallengesComponent implements OnInit {
         filter: {
           type: 'list',
           config: {
-            selectText: 'Select...',
+            selectText: '--Select--',
             list: this.disciplineList
           },
         },
@@ -74,7 +74,7 @@ export class MyChallengesComponent implements OnInit {
         filter: {
           type: 'list',
           config: {
-            selectText: '---Select---',
+            selectText: '--Select--',
             list: [
               { value: 'Yes', title: 'Yes' },
               { value: 'No', title: 'No' }
@@ -93,13 +93,13 @@ export class MyChallengesComponent implements OnInit {
         filter: {
           type: 'list',
           config: {
-            selectText: '---Select---',
+            selectText: '--Select--',
             list: this.types
           },
         },
       },
-      totalPontuation: {
-        title: 'Total pontuation',
+      Pontuation: {
+        title: 'Pontuation',
         addable: false,
         editable: false
       },
@@ -128,6 +128,14 @@ export class MyChallengesComponent implements OnInit {
   }
 
   onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  onCreate(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
     } else {

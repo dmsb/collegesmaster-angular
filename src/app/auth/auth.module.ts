@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NbCheckboxModule, NbLayoutModule, NbCardModule } from '@nebular/theme';
-import { NbEmailPassAuthProvider, NbAuthModule } from '@nebular/auth';
+import { NbAuthModule } from '@nebular/auth';
 import { RegisterComponent } from './register/register.component';
 import { AuthComponent } from './auth.component';
 import { AuthRoutingModule } from './auth-routing.module';
